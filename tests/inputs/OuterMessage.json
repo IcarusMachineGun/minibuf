@@ -1,0 +1,8 @@
+{
+  "id": "outer-123",
+  "inner": {
+    "value": 100,
+    "description": "Inner description"
+  },
+  "tags": ["tag1", "tag2", "tag3"]
+}

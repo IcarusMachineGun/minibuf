@@ -1,0 +1,39 @@
+{
+    "order_id": 987654321,
+    "customer_id": 5551234,
+    "promo_code": "SUMMER2024",
+    "notes": "Please deliver after 5 PM",
+    "status": "SHIPPED",
+    "created_at": 1698765432,
+    "items": [
+        {
+            "product_id": 101,
+            "quantity": 2,
+            "unit_price": 29.99,
+            "discount": 5.0
+        },
+        {
+            "product_id": 203,
+            "quantity": 1,
+            "unit_price": 15.5,
+            "discount": null
+        }
+    ],
+    "shipping_address": {
+        "street": "456 Oak Ave",
+        "city": "Springfield",
+        "postal_code": "67890",
+        "apartment": null
+    },
+    "billing_address": {
+        "street": "789 Corporate Blvd",
+        "city": "Metropolis",
+        "postal_code": "11223",
+        "apartment": "Suite 1500"
+    },
+    "metadata": {
+        "source": "web_app",
+        "user_agent": "mobile",
+        "campaign": "summer_sale"
+    }
+}

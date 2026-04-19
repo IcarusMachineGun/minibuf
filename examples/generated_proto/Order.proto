@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+message Address {
+  string street = 1;
+  string city = 2;
+  optional string postal_code = 3;
+  optional string apartment = 4;
+}
+message Order {
+  message LineItem {
+    uint64 product_id = 1;
+    uint32 quantity = 2;
+    double unit_price = 3;
+    optional float discount = 4;
+  }
+
+  enum Status {
+    PENDING = 0;
+    PROCESSING = 1;
+    SHIPPED = 2;
+    DELIVERED = 3;
+    CANCELLED = 4;
+  }
+  uint64 order_id = 1;
+  uint64 customer_id = 2;
+  optional string promo_code = 3;
+  optional string notes = 4;
+  Status status = 5;
+  uint64 created_at = 6;
+  repeated LineItem items = 7;
+  Address shipping_address = 8;
+  optional Address billing_address = 9;
+  map<string, string> metadata = 10;
+}

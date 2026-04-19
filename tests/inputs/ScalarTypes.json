@@ -1,0 +1,17 @@
+{
+  "double_field": 3.141592653589793,
+  "float_field": 2.71828,
+  "int32_field": -2147483648,
+  "int64_field": 9223372036854775807,
+  "uint32_field": 4294967295,
+  "uint64_field": 18446744073709551615,
+  "sint32_field": -123456,
+  "sint64_field": -9876543210,
+  "fixed32_field": 4294967295,
+  "fixed64_field": 18446744073709551615,
+  "sfixed32_field": -2147483648,
+  "sfixed64_field": -9223372036854775808,
+  "bool_field": true,
+  "string_field": "Hello, Protobuf!",
+  "bytes_field": "SGVsbG8gV29ybGQ="
+}

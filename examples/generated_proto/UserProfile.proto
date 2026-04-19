@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+enum UserRole {
+  UNKNOWN = 0;
+  ADMIN = 1;
+  USER = 2;
+  GUEST = 3;
+  MODERATOR = 4;
+}
+message UserProfile {
+  message Settings {
+    message Privacy {
+      bool profile_public = 1;
+      bool show_email = 2;
+      bool last_seen_visible = 3;
+    }
+    bool email_notifications = 1;
+    bool push_notifications = 2;
+    string theme = 3;
+    Privacy privacy = 4;
+  }
+  uint64 user_id = 1;
+  string username = 2;
+  optional UserRole role = 3;
+  UserRole status = 4;
+  Settings settings = 5;
+  repeated uint64 recent_orders = 6;
+}

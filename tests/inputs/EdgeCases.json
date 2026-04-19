@@ -1,0 +1,17 @@
+{
+  "zero_int": 0,
+  "zero_double": 0.0,
+  "false_bool": false,
+  "empty_string": "",
+  "max_int32": 2147483647,
+  "min_int32": -2147483648,
+  "max_int64": 9223372036854775807,
+  "min_int64": -9223372036854775808,
+  "nan_value": "NaN",
+  "infinity_value": "Infinity",
+  "neg_infinity_value": "-Infinity",
+  "double_nan": "NaN",
+  "unicode_string": "Hello 🌍 Emoji 😊 Unicode: 汉语",
+  "escaped_string": "Line1\nLine2\tTab\"Quote\\Backslash",
+  "large_bytes": "AQIDBAUGBwgJCgsMDQ4PEBESEw=="
+}

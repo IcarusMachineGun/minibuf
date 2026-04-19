@@ -1,0 +1,77 @@
+{
+    "address_test": {
+        "street": "123 Main St",
+        "postal_code": "12345"
+    },
+    "order_full": {
+        "order_id": 987654321,
+        "customer_id": 5551234,
+        "promo_code": "SUMMER2024",
+        "notes": "Please deliver after 5 PM",
+        "status": 2,
+        "created_at": 1698765432,
+        "items": [
+            {
+                "product_id": 101,
+                "quantity": 2,
+                "unit_price": 29.99,
+                "discount": 5.0
+            },
+            {
+                "product_id": 203,
+                "unit_price": 15.50
+            }
+        ],
+        "shipping_address": {
+            "street": "456 Oak Ave",
+            "city": "Springfield",
+            "postal_code": "67890"
+        },
+        "billing_address": {
+            "street": "789 Corporate Blvd",
+            "city": "Metropolis",
+            "postal_code": "11223",
+            "apartment": "Suite 1500"
+        },
+        "metadata": {
+            "source": "web_app",
+            "user_agent": "mobile",
+            "campaign": "summer_sale"
+        }
+    },
+    "order_minimal": {
+        "order_id": 111222333,
+        "customer_id": 999888,
+        "items": [
+            {
+                "product_id": 777,
+                "unit_price": 9.99
+            }
+        ],
+        "shipping_address": {
+            "street": "321 Pine St"
+        }
+    },
+    "user_profile": {
+        "user_id": 123456789,
+        "username": "john_doe",
+        "role": 1,
+        "settings": {
+            "email_notifications": false,
+            "privacy": {
+                "show_email": true
+            }
+        },
+        "recent_orders": [
+            111222333,
+            987654321
+        ]
+    },
+    "user_profile_minimal": {
+        "user_id": 987654321,
+        "username": "jane_smith",
+        "settings": {
+            "privacy": {}
+        }
+    }
+}

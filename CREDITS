@@ -1,0 +1,7 @@
+This project was inspired by Google Protocol Buffers 
+(https://protobuf.dev/). 
+The original Protocol Buffers implementation is 
+Copyright 2008 Google Inc., licensed under a
+BSD-style license (see [LICENSE](https://github.com/protocolbuffers/protobuf/blob/b7e554aed5b26c9e4e3c328624705d6c8ae43292/LICENSE)).
+
+THIS PROJECT IS NOT AFFILIATED WITH OR ENDORSED BY GOOGLE.

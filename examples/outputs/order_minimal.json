@@ -1,0 +1,24 @@
+{
+    "order_id": 111222333,
+    "customer_id": 999888,
+    "promo_code": null,
+    "notes": null,
+    "status": "PENDING",
+    "created_at": 0,
+    "items": [
+        {
+            "product_id": 777,
+            "quantity": 1,
+            "unit_price": 9.99,
+            "discount": null
+        }
+    ],
+    "shipping_address": {
+        "street": "321 Pine St",
+        "city": "Unknown City",
+        "postal_code": null,
+        "apartment": null
+    },
+    "billing_address": null,
+    "metadata": null
+}

@@ -1,0 +1,17 @@
+{
+    "user_id": 987654321,
+    "username": "jane_smith",
+    "role": null,
+    "status": "USER",
+    "settings": {
+        "email_notifications": true,
+        "push_notifications": true,
+        "theme": "light",
+        "privacy": {
+            "profile_public": true,
+            "show_email": false,
+            "last_seen_visible": true
+        }
+    },
+    "recent_orders": null
+}

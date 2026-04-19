@@ -1,0 +1,18 @@
+{
+  "string_map": {
+    "key1": "value1",
+    "key2": "value2"
+  },
+  "numeric_map": {
+    "1": 100.5,
+    "2": 200.75
+  },
+  "enum_map": {
+    "status1": "ACTIVE",
+    "status2": "INACTIVE"
+  },
+  "object_map": {
+    "obj1": {"value": 1, "description": "Object 1"},
+    "obj2": {"value": 2, "description": "Object 2"}
+  }
+}

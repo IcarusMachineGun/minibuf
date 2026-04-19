@@ -1,0 +1,43 @@
+{
+  "id": "complex-001",
+  "scalars": {
+    "double_field": 1.5,
+    "float_field": 2.5,
+    "int32_field": 100,
+    "int64_field": "1000",
+    "uint32_field": 200,
+    "uint64_field": "2000",
+    "sint32_field": -50,
+    "sint64_field": "-500",
+    "fixed32_field": 300,
+    "fixed64_field": "3000",
+    "sfixed32_field": -60,
+    "sfixed64_field": "-600",
+    "bool_field": true,
+    "string_field": "Test",
+    "bytes_field": "dGVzdA=="
+  },
+  "items": [
+    {
+      "name": "Item1",
+      "count": 10,
+      "enabled": true,
+      "score": 80.5,
+      "status": "ACTIVE"
+    },
+    {
+      "name": "Item2",
+      "count": 20,
+      "enabled": false,
+      "score": 90.0,
+      "status": "INACTIVE"
+    }
+  ],
+  "mappings": {
+    "keyA": {"value": 1, "description": "A"},
+    "keyB": {"value": 2, "description": "B"}
+  },
+  "status_history": ["PENDING", "ACTIVE", "INACTIVE"],
+  "signature": "c2lnbmF0dXJlCg=="
+}
+

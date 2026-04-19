@@ -1,0 +1,20 @@
+{
+    "user_id": 123456789,
+    "username": "john_doe",
+    "role": "ADMIN",
+    "status": "USER",
+    "settings": {
+        "email_notifications": false,
+        "push_notifications": true,
+        "theme": "light",
+        "privacy": {
+            "profile_public": true,
+            "show_email": true,
+            "last_seen_visible": true
+        }
+    },
+    "recent_orders": [
+        111222333,
+        987654321
+    ]
+}

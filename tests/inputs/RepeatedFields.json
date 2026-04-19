@@ -1,0 +1,10 @@
+{
+  "numbers": [1, 2, 3, 4, 5],
+  "names": ["Alice", "Bob", "Charlie"],
+  "statuses": ["ACTIVE", "INACTIVE", "PENDING"],
+  "items": [
+    {"value": 10, "description": "First"},
+    {"value": 20, "description": "Second"},
+    {"value": 30, "description": "Third"}
+  ]
+}
