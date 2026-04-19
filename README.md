@@ -86,4 +86,3 @@ message Person {
 
 ### TODO:
 - [ ] tests
-- [ ] fix some type checker issues
