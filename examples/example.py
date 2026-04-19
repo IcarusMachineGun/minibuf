@@ -6,9 +6,9 @@ from minibuf import *
 
 class Address(BaseMessage):
     street: str = field(1)
+    postal_code: str | None = field(3, default=None)
+    apartment: str | None = field(4, default=None)
     city: str = field(2, default='Unknown City')
-    postal_code: str | None = field(3)
-    apartment: str | None = field(4)
 
 
 class Product(BaseMessage):
@@ -22,9 +22,9 @@ class Product(BaseMessage):
 class Order(BaseMessage):
     class LineItem(BaseMessage):
         product_id: uint64 = field(1)
-        quantity: uint32 = field(2, default=1)
         unit_price: double = field(3)
-        discount: float | None = field(4)
+        discount: float | None = field(4, default=None)
+        quantity: uint32 = field(2, default=1)
 
     class Status(enum.IntEnum):
         PENDING = 0
@@ -36,18 +36,18 @@ class Order(BaseMessage):
     order_id: uint64 = field(1)
     customer_id: uint64 = field(2)
 
-    promo_code: str | None = field(3)
-    notes: str | None = field(4)
-
-    status: Status = field(5, default=0)
-    created_at: uint64 = field(6, default=0)
-
     items: list[LineItem] = field(7)
 
     shipping_address: Address = field(8)
-    billing_address: Address | None = field(9)
-
     metadata: dict[str, str] = field(10)
+
+    promo_code: str | None = field(3, default=None)
+    notes: str | None = field(4, default=None)
+
+    billing_address: Address | None = field(9, default=None)
+    status: Status = field(5, default=0)
+    created_at: uint64 = field(6, default=0)
+
 
 
 class UserRole(enum.IntEnum):
@@ -60,9 +60,6 @@ class UserRole(enum.IntEnum):
 
 class UserProfile(BaseMessage):
     class Settings(BaseMessage):
-        email_notifications: bool = field(1, default=True)
-        push_notifications: bool = field(2, default=True)
-        theme: str = field(3, default='light')
 
         class Privacy(BaseMessage):
             profile_public: bool = field(1, default=True)
@@ -70,13 +67,16 @@ class UserProfile(BaseMessage):
             last_seen_visible: bool = field(3, default=True)
 
         privacy: Privacy = field(4)
+        email_notifications: bool = field(1, default=True)
+        push_notifications: bool = field(2, default=True)
+        theme: str = field(3, default='light')
 
     user_id: uint64 = field(1)
     username: str = field(2)
-    role: UserRole | None = field(3)
-    status: UserRole = field(4, default_factory=lambda: UserRole.USER)
     settings: Settings = field(5)
-    recent_orders: list[uint64] | None = field(6)
+    recent_orders: list[uint64] | None = field(6, default=None)
+    role: UserRole | None = field(3, default=None)
+    status: UserRole = field(4, default_factory=lambda: UserRole.USER)
 
 
 inputs: dict[str, type[Address | Order | UserProfile]] = {
