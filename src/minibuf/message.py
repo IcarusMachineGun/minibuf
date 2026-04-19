@@ -20,7 +20,7 @@ from .registry import TYPE_REGISTRY
 
 MAX_FIELD_NUMBER = 2**29 - 1
 
-RepeatedType = list[Any] | tuple[Any]  # | array
+RepeatedType = list | tuple  # | array
 
 
 class Tag(NamedTuple):
