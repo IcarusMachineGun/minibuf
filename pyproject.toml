@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "minibuf"
-version = "0.1.0"
+version = "0.1.1"
 description = "Toy protocol buffers implementation on python (and for python) without dependencies"
 authors = [{name = "IcarusMachineGun"}]
 readme = "README.md"
