@@ -9,9 +9,6 @@ class TypeMeta(type):
 class TypeBase(metaclass=TypeMeta): ...
 
 
-# --------------- types -----------------
-
-
 class int32(int, TypeBase): ...
 
 

@@ -46,7 +46,7 @@ class Payload(BaseMessage):
         text = ''.join(random.choices(string.ascii_letters, k=int(perc[0] * size_bytes)))
         blob = random.randbytes(int(perc[1] * size_bytes))
         num = [random.randint(-(2**31), 2**31 - 1) for _ in range(int(perc[2] * size_bytes) // 4)]
-        return cls(text, blob, num)
+        return cls(text, blob, num) # type: ignore
 
 
 class LargeMsg(BaseMessage):

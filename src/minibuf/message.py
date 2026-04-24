@@ -13,11 +13,11 @@ from os import PathLike
 from typing import Any, ClassVar, NamedTuple, Self, Union, dataclass_transform, get_args, get_origin, get_type_hints, overload
 
 from . import varint
+from ._types import TypeBase
 from .common import Encoded, Field, WireType, type_str
 from .common import field as _field
 from .logger import logger
 from .registry import TYPE_REGISTRY
-from .types._types import TypeBase
 
 MAX_FIELD_NUMBER = 2**29 - 1
 
