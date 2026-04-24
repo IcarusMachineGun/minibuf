@@ -8,8 +8,8 @@ from functools import wraps
 from typing import Any, NoReturn
 
 from . import varint
+from ._types import *
 from .common import DecodeResult, WireType
-from .types import *
 
 
 class Frozen:
