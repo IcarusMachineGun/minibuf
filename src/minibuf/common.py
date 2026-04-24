@@ -1,11 +1,10 @@
 """Some common stuff along with types"""
 
-# ruff: noqa:  N801
 import base64
 import enum
 import weakref
 from collections.abc import Callable
-from typing import Any, ClassVar, NamedTuple, NoReturn, TypedDict, Unpack
+from typing import Any, NamedTuple, NoReturn, TypedDict, Unpack
 
 
 def type_str(t: type[Any]):
@@ -39,63 +38,6 @@ class WireType(enum.IntEnum):
     SGROUP = 3
     EGROUP = 4
     I32 = 5
-
-
-class TypeMeta(type):
-    def __str__(cls) -> str:
-        return f'{cls.__name__}'
-
-    def __new__(mcs, name, bases, namespace, **_):
-        py_type = None
-        for base in bases:
-            if base is not TypeBase and not isinstance(base, TypeMeta):
-                py_type = base
-                break
-
-        if py_type:
-            namespace['py_type'] = py_type
-
-        return super().__new__(mcs, name, bases, namespace)
-
-
-class TypeBase(metaclass=TypeMeta):
-    py_type: ClassVar[type]
-
-
-# --------------- types -----------------
-
-
-class int32(int, TypeBase): ...
-
-
-class int64(int, TypeBase): ...
-
-
-class uint32(int, TypeBase): ...
-
-
-class uint64(int, TypeBase): ...
-
-
-class sint32(int, TypeBase): ...
-
-
-class sint64(int, TypeBase): ...
-
-
-class fixed64(int, TypeBase): ...
-
-
-class sfixed64(int, TypeBase): ...
-
-
-class fixed32(int, TypeBase): ...
-
-
-class sfixed32(int, TypeBase): ...
-
-
-class double(float, TypeBase, pytype=float): ...
 
 
 class FieldTypedDict[T](TypedDict, total=False):

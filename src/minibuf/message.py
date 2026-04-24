@@ -13,10 +13,11 @@ from os import PathLike
 from typing import Any, ClassVar, NamedTuple, Self, Union, dataclass_transform, get_args, get_origin, get_type_hints, overload
 
 from . import varint
-from .common import Encoded, Field, TypeBase, WireType, type_str
-from .common import field as field_fn
+from .common import Encoded, Field, WireType, type_str
+from .common import field as _field
 from .logger import logger
 from .registry import TYPE_REGISTRY
+from .types._types import TypeBase
 
 MAX_FIELD_NUMBER = 2**29 - 1
 
@@ -39,7 +40,7 @@ class MessageMeta(type):
 @dataclass_transform(
     kw_only_default=False,
     frozen_default=True,
-    field_specifiers=(field_fn,),
+    field_specifiers=(_field,),
 )
 class BaseMessage(metaclass=MessageMeta):
     """Message base class.
@@ -468,7 +469,7 @@ class BaseMessage(metaclass=MessageMeta):
         nested: dict[str, Any] = {}
         for field in cls._get_spec().values():
             if (value := data_copy.get(field.name)) is not None:
-                type_obj: Any = field.type.py_type if issubclass(field.type, TypeBase) else field.type
+                type_obj: Any = field.type.__base__ if issubclass(field.type, TypeBase) else field.type
                 if field.is_repeated:
                     if field.is_mapping:
                         if type_obj.__name__ == '_MapEntry' or isinstance(value, type_obj):
@@ -582,8 +583,8 @@ def is_proto_type(t: Any):
 
 
 def is_type_invalid_in_proto3_mapping_key(t: Any):
-    if hasattr(t, 'py_type'):  # issubclass(t, _TypeBase)
-        t = t.py_type
+    if issubclass(t, TypeBase):
+        t = t.__base__
     return is_proto_type(t) or t in {float, bytes}
 
 

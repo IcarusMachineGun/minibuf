@@ -2,7 +2,9 @@ import enum
 import logging
 
 logging.getLogger('minibuf').setLevel('DEBUG')
-from minibuf import *
+
+from minibuf import BaseMessage, field
+from minibuf.types import *
 
 
 class ScalarTypes(BaseMessage):
