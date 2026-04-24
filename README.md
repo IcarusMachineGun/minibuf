@@ -36,6 +36,7 @@ pip install git+https://github.com/IcarusMachineGun/minibuf.git
 ```python
 >>> import enum
 >>> from minibuf import *
+>>> from minibuf.types import *
 >>> class PhoneNumber(BaseMessage):
 ...     class PhoneType(enum.IntEnum):
 ...         MOBILE = enum.auto()
