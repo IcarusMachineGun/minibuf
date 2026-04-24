@@ -8,21 +8,8 @@ from functools import wraps
 from typing import Any, NoReturn
 
 from . import varint
-from .common import (
-    DecodeResult,
-    WireType,
-    double,
-    fixed32,
-    fixed64,
-    int32,
-    int64,
-    sfixed32,
-    sfixed64,
-    sint32,
-    sint64,
-    uint32,
-    uint64,
-)
+from .common import DecodeResult, WireType
+from .types import *
 
 
 class Frozen:
